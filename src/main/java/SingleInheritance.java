@@ -1,3 +1,4 @@
+
 public class SingleInheritance {
     void f1(){
         System.out.println("Yo! I'm in f1");

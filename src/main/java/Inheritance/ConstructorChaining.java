@@ -1,4 +1,4 @@
-package moreConcepts;
+package Inheritance;
 
 public class ConstructorChaining {
     public static void main(String[] args) {
