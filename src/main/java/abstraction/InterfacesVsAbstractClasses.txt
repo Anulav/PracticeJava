@@ -10,7 +10,7 @@ and abstract automatically.
 Variables are public static and             Nothing imposed as such.
 in an Interface.
 
-Variables should be initialized             Nothing imposed as such.
+Variables should be initialized             Nothing imposed as such. Can be initialized using constructor.
 when declared.
 
 Can not define blocks such as static        Nothing imposed as such. Can have static and instance blocks.
