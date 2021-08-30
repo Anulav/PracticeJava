@@ -1,0 +1,18 @@
+MarkerInterface
+
+Interface with no methods. By implementing such interfaces we provide special
+ability to our classes.
+
+for example,
+
+Serializable, Cloneable, RandomAccess
+
+By implementing a Serializable interface the object of the class can be
+returned to a stream.
+
+By implementing a Cloneable interface the object of the class can be
+cloned.
+
+JVM looks for such interfaces and then allows those objects with the functionalities
+as specified for that Marker interface.
+

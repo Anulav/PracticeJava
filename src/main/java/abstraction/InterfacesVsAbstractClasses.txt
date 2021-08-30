@@ -1,0 +1,19 @@
+Interface                                   Abstract Classes.
+
+It acts as a contract.                      It has a partial implementation.
+Will not have any implementation as sorts.
+All methods are abstract.
+
+Compiler marks each method as public        Nothing imposed as such.
+and abstract automatically.
+
+Variables are public static and             Nothing imposed as such.
+in an Interface.
+
+Variables should be initialized             Nothing imposed as such.
+when declared.
+
+Can not define blocks such as static        Nothing imposed as such. Can have static and instance blocks.
+and instance blocks.
+
+Can not define constructors.                Can have constructors.
