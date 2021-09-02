@@ -23,7 +23,7 @@ public class MultiThreadedWithPriority extends Thread{
 
 /*
 Thread Priority:
- Can use Thread.setPriority() method. It has a range between 1-10, 1 being highest and 10 being the lowest.
+ Can use Thread.setPriority() method. It has a range between 1-10, 10 being highest and 1 being the lowest.
  Constants provided for priority are MAX_PRIORITY(10), MIN_PRIORITY(1) and NORM_PRIORITY(5).
  Although the priority is set by the programmer. It is upto JVM's implementation on the order in which threads are executed.
 */

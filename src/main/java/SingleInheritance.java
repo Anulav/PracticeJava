@@ -7,6 +7,7 @@ public class SingleInheritance {
     public static void main(String[] args) {
         SingleInheritance singleInheritance = new SingleInheritance();
         singleInheritance.f1();
+        singleInheritance.getClass();
         System.out.println(singleInheritance.hashCode()+" "+ singleInheritance.getClass().getCanonicalName());
     }
 }

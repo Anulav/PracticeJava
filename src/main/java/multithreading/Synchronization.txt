@@ -1,0 +1,95 @@
+Synchronization
+
+Multiple threads trying to access an Object can corrupt its data. Hence synchronization is used to eradicate that.
+Synchronization is done on object level and class level(static synchronization) not on method level. A method/class/block can be marked as synchronized.
+Typically we use add remove and delete operation code in synchronization i.e something which manipulates the data of the object.
+For get operation synchronization is generally not required.
+
+Consider a scenario, a class has three methods
+synchronized m1()
+synchronized m2()
+m3()
+
+And three threads t1,t2,t3 threads trying to execute m1(), m2() and m3() of an object simultaneously. In that case
+while t1 is executing m1(), it acquires object lock. Acquiring and releasing lock is handled by JVM. Hence t2 is moved to waiting state however the t3
+can execute m3 as it is not synchronized.
+****************************************************************************************************************************************************************
+Class level lock
+
+To execute static synchronized method, threads acquire a class level lock.
+
+Consider a scenario, a class has three methods
+static synchronized m1()
+static synchronized m2()
+static m3()
+synchronized m4()
+m5()
+
+And five threads t1,t2,t3,t4,t5 threads trying to execute m1(), m2() ,m3(), m4() and m5() of an object simultaneously. In that case
+while t1 is executing m1(), it acquires class level lock till it completes execution. Hence t2 which is trying to execute another synchronized static method and
+t3 which is trying to execute a static is moved to wait state.
+However t4 and t5 which is trying to execute m4() and m5() can execute as they are not 'class level static' methods.
+****************************************************************************************************************************************************************
+Synchronized Blocks
+If you need to have only a synchronization over few lines of code rather than a method. You may use synchronized block. Improves application performance by
+decreasing the wait time.
+
+Synchronized block can be defined in three ways:
+1. synchronized(this){  // here we pass the reference of current object and the lock is provided over it.
+   }
+
+2. synchronized(x){  // here we pass the reference of any object and the lock is provided over it. That is no other thread can access synchronized
+   }                 //method of this object, while a thread is inside this block.
+
+3. synchronized(DisplayMessage.class){  // here the class is provided and lock is provided at the class level i.e no thread can access
+                                        // static synchronized methods while a thread is inside this block.
+   }
+
+****************************************************************************************************************************************************************
+InterThreadCommunication
+
+While the threads are in execution they can communicate using the following methods provide java.lang package:
+wait(), notify() and notifyAll()
+These are available to every java object as these are the methods of Object class.
+
+Consider a scenario:
+2 threads t1, and t2 are in execution. And t1 has acquire object lock on a Object x.
+But it requires t2 to complete its execution on Object x. Then in that case t1 will invoke wait() method on Object x and
+and t2 can execute on Object x .And after execution may invoke notify() on Object x to notify thread t1 that t2's work is done and t1
+can continue on Object x.
+****************************************************************************************************************************************************************
+ThreadGroups
+
+java.Lang.ThreadGroup lets us to group together a set of thread meant to do a similar job. Like we can have a thread groups such as Producer and Consumer.
+
+ProducerGroup pt1, pt2,pt3
+ConsumerGroup ct1, ct2, ct3
+
+Grouping allows to perform a group level operation. Which is then applied to all the threads within the group.
+
+In Java all the threads belong to a ThreadGroup.
+                    |     System     |
+                    /       |        \
+            |   Main  | | Finalizer| | SignalDispatcher |
+            /  |      \
+|MainThread||Thread1| |MyNewThreadGroup|
+                        /       \
+                   Thread2     Thread3
+
+
+                 Above is the ThreadGroup Hierarchy
+
+****************************************************************************************************************************************************************
+Daemon Threads
+
+A Daemon thread runs in the backgroup and usually assess the other threads running. Like the GarbageCollector thread is spawned by JVM
+whenever a java program is run. It will clean up the memory.
+We can check whether a thread is daemon or not by calling isDaemon method.
+
+Also we can make a thread daemon by calling setDaemon method, however this should be done before the thread starts execution or
+else IllegalThreadStateException is thrown.
+
+A Main thread is not daemon by default and we can't make it so because whenever a program is run the Main thread is already running.
+
+
+
