@@ -82,14 +82,16 @@ In Java all the threads belong to a ThreadGroup.
 ****************************************************************************************************************************************************************
 Daemon Threads
 
-A Daemon thread runs in the backgroup and usually assess the other threads running. Like the GarbageCollector thread is spawned by JVM
+A Daemon thread runs in the background and usually assess the other threads running. Like the GarbageCollector thread is spawned by JVM
 whenever a java program is run. It will clean up the memory.
 We can check whether a thread is daemon or not by calling isDaemon method.
 
 Also we can make a thread daemon by calling setDaemon method, however this should be done before the thread starts execution or
 else IllegalThreadStateException is thrown.
 
-A Main thread is not daemon by default and we can't make it so because whenever a program is run the Main thread is already running.
+A Main thread is not daemon by default and we can't make it so because whenever a program is run the Main thread is already executing.
 
+****************************************************************************************************************************************************************
+Deadlock Condition
 
-
+Deadlock occurs when multiple threads are waiting on each other resources.

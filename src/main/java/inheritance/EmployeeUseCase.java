@@ -77,7 +77,7 @@ class Developer extends Employee{
         super(id, name, dept, salary);
         this.technology = technology;
         this.salary = salary; //Without this statement.
-                              // Whenever the salary is accessed it will return as 0.0 As the current class's salary is not initialise
+                              // Whenever the salary is accessed it will return as 0.0 As the current class's salary is not initialized.
     }
     @Override
     protected void work(){

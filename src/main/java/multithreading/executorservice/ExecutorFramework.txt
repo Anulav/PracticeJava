@@ -1,0 +1,32 @@
+****************************************************************************************************************************************************************
+ExecutorFramework
+
+Disadvantages of traditional thread creation:
+1. Time consuming process
+2. Poor Resource Management, if threads are not managed efficiently.
+3. Not Robust, may keep on creating threads that can cause thread scarcity.
+
+Introduction
+
+Executor Framework(introduced in Java 1.5) gives a ThreadPool of worker threads. Which can be assigned a task. After completion
+the thread is sent back to the pool for reassignment(re-use).
+
+Executor Framework manages the entire lifecycle of the thread. It solves:
+1. time consumption : by no need to create separate classes for threads.
+2. Poor Resource Management: threads are "re-used"
+3. Robustness : Even if a million requests are generated. It won't create a million threads as you can define an
+upper bound for threads.
+
+****************************************************************************************************************************************************************
+Callable and Future
+
+Runnable interface doesn't return anything after execution(void run).
+Callable interface is required whenever we need to retrieve an object after execution of a thread.
+Callable<V> is a generic interface with a
+V call() method.
+submit a callable implementation returns a future object.
+Future future = service.submit(myCallable); //myCallable is implementing Callable interface.
+
+Like optional, you can get the object using future.get() method. The get method can throw
+InterruptedException, CancellationException, ExecutionException.
+
