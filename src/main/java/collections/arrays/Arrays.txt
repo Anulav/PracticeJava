@@ -1,0 +1,10 @@
+****************************************************************************************************************************************************************
+Arrays
+Continuous group of homogenous elements. Can store primitive and objects. In java, Arrays are objects.
+Index based iteration. Let say there be an array of name a.
+ address of a[3] = address of a[0] + size of element(object or primitive data) * 3
+
+Access is fast however the insertion and deletion from an array is time consuming.
+Arrays are immutable i.e once memory provided at runtime it will not change with time.
+
+All array elements have a property called length which tells the length of a given array.

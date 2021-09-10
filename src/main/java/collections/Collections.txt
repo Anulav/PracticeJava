@@ -1,0 +1,91 @@
+****************************************************************************************************************************************************************
+Collections Framework
+
+Used to store objects and perform operations. Unike arrays its size is not fixed and can be increased or decreased while runtime.
+
+Collections interface hierarchy
+                         Collections
+                    ----/       \  --\
+                 --/             -\   ----\
+               List----------+    Set-\    Queue
+           ---/  ----+    -  |    \    -\       \
+        --/          |       |     \     -\     PrioritySet
+     LinkedList Vector ArrayList  HashSet  SortedSet
+                                     |        |
+                                     |      TreeSet
+                                     |
+                                  LinkedHashSet
+
+Some facts:
+1. Key interface java.util.Collection
+2. List allow dups, set doesn't allow dups and Queue is FIFO
+3. Whenever 'linked' is used, it maintains the order of insertion
+4. Whenever 'tree' is used , sorting is done.
+5. Vector is legacy class and all the methods are synchronized hence not much use in multithreaded environment.
+
+****************************************************************************************************************************************************************
+For Key and Value, we use Map interface
+                                    Map
+                                 /-- | ---\
+                           HashMap   |    SortedMap
+                            /---     |       --\
+                    LinkedHashMap    |      TreeMap
+                                     |
+                                   HashTable
+Some facts about Map Interface and its childs:
+1. HashMap and HashTable uses hashing and are similar, however the HashTable is a legacy class and like Vector
+all its methods are synchronized, which limits its usage in multi-threaded environment.
+
+Most applications doesn't require knowing each implementation as runtime polymorphism is used.
+
+****************************************************************************************************************************************************************
+ArrayList
+
+Uses internally arrays, hence access is very fast but the insertion and deletion is very slow.
+By default the capacity of array used internally is 10 if the size is not specified. If element is inserted beyond the size
+a new array is used of size 1.5x of initial array size and elements are copied.
+So it is better that the initial capacity is specified so these copy operations are reduced.
+
+Better suited where a lot of reads operation is done in comparison to write and delete ones.
+Mostly prefered over LinkedList
+
+****************************************************************************************************************************************************************
+LinkedList
+
+LinkedList are implemented using nodes having 3 things: reference to prev node, Object, reference to next node.
+That is, in Java it is basically implemented as Doubly LinkedList.
+
+Pros and Cons
+1. Insertion and Deletion is faster than ArrayList.
+2. Slow Random Access in the memory, as it can allocated anywhere not like array where it is provided contiguous space.
+3. Requires more memory.
+
+****************************************************************************************************************************************************************
+Set
+
+Set interface is extended by SortedSet interface and implemented by HashSet class which is further extended by LinkedHashSet(maintains order of insertion) class.
+SortedSet is extended by Navigable interface and which is further implemented by TreeSet.
+
+HashSet doesn't maintain insertion order.
+LinkedHashSet does maintain insertion order.
+TreeSet sorts according to natural order example TreeSet arranges string alphabetically.
+
+****************************************************************************************************************************************************************
+ListIterator vs Iterator : ListIterator can move in both forward and backward direction.
+****************************************************************************************************************************************************************
+Comparable vs Comparator Interface
+
+By implementing Comparable interface we provide the natural ordering of the elements.
+        obj1.compareTo(obj2)--- + ve Value if obj2 has to come before obj1
+             |           \
+   0 if obj1 and obj2    - ve value if obj2 has to come after obj1
+        order are same
+
+If we want to implement the ordering later on i.e customizing ordering, for inbuilt classes and own classes we implement Comparator
+        compare(obj1, obj2)
+                    -ve value if obj1 has to come before obj2
+                    +ve if obj1 has to come after obj2
+                    0 if both obj1 and obj2 have same order
+
+Remember for natural ordering use Comparable interface and implement compareTo method for Custom ordering use Comaparator and implement
+compare method.

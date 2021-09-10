@@ -8,7 +8,7 @@ public class CallableFutureDemo {
         ExecutorService service = Executors.newFixedThreadPool(3);
         for (int i = 0; i < nums.length ; i++) {
             int finalI= i; //need to make variable final or effectively final to be used in lambda expressions. here it is 'effectively final'.
-            Future<Integer> totalSum = service.submit(()->{ //Could have made simpler by creating a separate class rather than a lambda here.
+            Future<Integer> totalSum = service.submit(()->{ //Could have made it simpler by creating a separate class rather than a lambda here.
                 int sum = 0;
                 for (int j = 0; j < nums[finalI] ; j++) {
                         sum += j;
