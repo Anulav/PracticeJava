@@ -1,3 +1,4 @@
+package inheritance;
 
 public class SingleInheritance {
     void f1(){

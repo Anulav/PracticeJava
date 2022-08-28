@@ -10,8 +10,8 @@ public class SuperKeyword {
 //        Output:
 //        A is 10 B is 20
 //        C is 30 D is 40
-//        Inside f1 of Parent
-//        Inside f1 of Child
+//        Inside f1 of Parent1
+//        Inside f1 of Child1
 //        11 21 30 40
     }
 }
@@ -24,7 +24,7 @@ class Parent{
         System.out.println("A is "+ a+" B is "+ b);
     }
     void f1(){
-        System.out.println("Inside f1 of Parent");
+        System.out.println("Inside f1 of Parent1");
     }
 }
 class Child extends Parent{
@@ -38,7 +38,7 @@ class Child extends Parent{
     void f1(){
         super.f1();
 //      System.out.println(super); Gives compilation error.
-        System.out.println("Inside f1 of Child");
+        System.out.println("Inside f1 of Child1");
     }
     void changeSuperVariables(int a, int b){
         super.a = a; //Accessing super class variables using 'super' object.
