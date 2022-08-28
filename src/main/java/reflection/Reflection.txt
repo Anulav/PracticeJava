@@ -1,0 +1,18 @@
+====================================================================================================================
+Reflection
+Reflection is used to check or modify the runtime behaviour of applications in the JVM.
+Even the private fields.
+Junit, Mockito , Spring , Power mock all use some aspects of Reflection.
+
+Use Cases:
+Debugging (Access to private members to used)
+Test tools (Mocking an object, Sequence of execution of some test cases, Injecting a mock)
+Extensibility features (An application can make use external classes by making using their extensibility features)
+Virtual Development Environments (Check the behaviour of some components and their behaviour)
+
+Package - java.lang.reflect
+After compilation class definitions are loaded in JVM. There is an object of type Class.
+Which has all the type definitions for API to interact with.
+object
+
+Class userClass = new User.getClass();
