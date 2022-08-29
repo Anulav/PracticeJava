@@ -2,7 +2,7 @@
 Reflection
 Reflection is used to check or modify the runtime behaviour of applications in the JVM.
 Even the private fields.
-Junit, Mockito , Spring , Power mock all use some aspects of Reflection.
+Junit, Mockito , Spring , Powermock all use some aspects of Reflection.
 
 Use Cases:
 Debugging (Access to private members to used)
@@ -16,3 +16,23 @@ Which has all the type definitions for API to interact with.
 object
 
 Class userClass = new User.getClass();
+
+====================================================================================================================
+Annotations
+Annotation is a form of metadata provides data about a program that is not part of program itself.
+
+Use Cases:
+Info for the Compiler, e.g @Override, @SuppressedWarning
+Deployment time processing, e.g Lombok
+Runtime Processing, e.g Spring, Junit
+@interface, Scope and Target provided by @Target and @Retention
+
+Target defines the context where the annotation type is applicable. Where we can use the annotation.
+It takes the array with the values of any type of Enum ElementType.
+
+Retention defines how long the annotation type is to be retained.
+There are three types of Retention Policy
+1. SOURCE discarded by the compiler.
+2. CLASS to be present in the class but not at the runtime.
+3. RUNTIME to be present in the class also at the runtime.
+
