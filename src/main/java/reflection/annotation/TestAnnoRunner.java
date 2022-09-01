@@ -17,7 +17,7 @@ public class TestAnnoRunner {
                         var testAnnotation = method.getAnnotation(TestAnno.class);
                         if (!testAnnotation.expected().equals(TestAnno.None.class)) { //Check exception thrown by the method as None.class is thrown when no exception is thrown.
                             try {
-                                method.invoke(obj); //Invoking the method on the object we created.
+                                method.invoke(obj); //Invoking the method on the object we created. Here we invoke the methods as it is required for the methods to be executed in this usecase.
                             } catch (InvocationTargetException ex) { /* In reflection the exception thrown while invoking method
                                                                      is wrapped around InvocationTargetException */
                                 if (!ex.getCause().getClass().equals(testAnnotation.expected())) {
