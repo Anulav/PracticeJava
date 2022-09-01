@@ -21,7 +21,7 @@ Class userClass = new User.getClass();
 Annotations
 Annotation is a form of metadata provides data about a program that is not part of program itself.
 
-Use Cases:
+Use Cases can be like:
 Info for the Compiler, e.g @Override, @SuppressedWarning
 Deployment time processing, e.g Lombok
 Runtime Processing, e.g Spring, Junit
