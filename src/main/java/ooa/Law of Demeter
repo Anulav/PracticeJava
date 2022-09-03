@@ -1,0 +1,44 @@
+****************************************************************************************************************************************************************
+Law of Demeter
+
+Each unit:
+1. Should have limited knowledge of other units.
+2. Should interact only with friends.
+
+For methods, method 'm' of an object 'o' may only call methods of the next objects:
+1. O itself
+2. m's parameters
+3. Any object instantiated within 'm'
+4. O's direct component objects.
+5. Global vars, accessible by O in scope of m.
+
+Example. car.getOwner().getWallet().payFine(amount):
+         Not a Solution:
+         User owner = car.getOwner();
+         Wallet wallet = owner.getWallet();
+         wallet.payFine(amount);
+
+         Solution:
+         owner.payFine(amount);
+
+Exceptions to Law of Demeter:
+1. Law of demeter is not applicable for DataStructures(As they just contain data). It is only applicable for objects.
+    userDto
+        .getCarDto()
+        .getManufacturerDto(); //No violation of law of demeter.
+
+2. Method chain on same object;
+    carBuilder
+        .setDoors(2)
+        .setRoofType("convertible")
+        .setEngineType("Diesel")
+        .build(); // No violation of law of demeter here.
+
+3. Extraction of objects from data containers
+    car
+       .getOwnersCollection()
+       .get(0); // No violation of law of Demeter here.
+
+Also, very important: Following law of demeter blindfolded can inhibit you from using other design patterns.
+
+****************************************************************************************************************************************************************

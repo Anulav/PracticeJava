@@ -1,0 +1,62 @@
+****************************************************************************************************************************************************************
+Clean architecture is a code that has low coupling and high cohesion.
+
+****************************************************************************************************************************************************************
+Coupling
+
+Degree of interconnection of program modules. Or direct knowledge of one element of another.
+
+High coupling is considered as bad design.
+Disadvantages:
+1. Can't make change in a single module independently.
+2. Can't use modules independently.
+3. Can't unit test modules independently.
+
+Coupling degrees from worst to best:
+1. Content Coupling:  Utilising one module component directly into another.
+2. Common Coupling:   Common function or vars used like global variables across modules.
+                      A change in the global vars can cause change in the modules utilising it.
+3. External Coupling: When a module set the communication protocol between two modules.
+                      In here the modules depend to modules external to the s/w being developed.
+4. Control Coupling:  When the modules communicate by passing the control of one module to another.
+5. Data Coupling
+  /Message Coupling:  When components communicate only on data or messages. Best form.
+
+****************************************************************************************************************************************************************
+Cohesion
+
+It is measure of degree to which the elements inside one module are functionally related.
+How a single class is designed. The more focused the class better the cohesion.
+Like entity classes do not contain the utility functions.
+
+High cohesion is when the class does has a well defined job and low cohesion is the when the class
+does a lot of jobs that are not related functionally.
+
+High cohesion gives better maintainability.
+****************************************************************************************************************************************************************
+
+Architecture is not about the tools or frameworks instead it screams intended usage.
+
+Plugins in clean architecture:
+Everything which is not business logic is a plugin which can be changed.
+Frameworks, User Interfaces, Databases are just plugin. So it can be easily changed at any time.
+
+Entities:
+Application support business rules.
+Domain object with methods.
+Encapsulates the most general and high level rules.
+Least likely to change when something external changes.
+
+Plugins should use boundaries. Boundaries are represented by interfaces that can be implemented by the service layers.
+It shows the dependency injection principle. Better coupling.
+
+Advantages of clean design:
+1. Testability
+2. Maintainability
+3. Modules Independence.
+
+Disadvantages:
+1. Might need to write more code (a lot of interfaces).
+2. It requires practice and experience.
+****************************************************************************************************************************************************************
+

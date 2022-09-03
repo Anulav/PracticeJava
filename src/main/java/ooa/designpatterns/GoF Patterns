@@ -1,0 +1,26 @@
+****************************************************************************************************************************************************************
+GoF
+23 types of patterns by GoF.
+
+Why design patterns?
+Tried and tested ways to solve 'already solved problems' in s/w development.
+
+Types of patterns:
+
+Creational: Patterns provided to create objects and hides the creational logic.
+
+Structural: Patterns provided for how to club Classes and objects for a better structures.
+            Utilised at the moment of creation.
+
+Behavioural:Patterns put a stress on algorithms and assign the extensibility of an object to ensure efficient communication between them.
+            How object interact with each other. Utilised at the runtime of program. Describes the flow.
+
+****************************************************************************************************************************************************************
+
+Class patterns vs Object patterns?
+Class patterns focus on static relationship. Classes and subclasses
+Object patterns focus on dynamic relationship.
+
+
+
+
