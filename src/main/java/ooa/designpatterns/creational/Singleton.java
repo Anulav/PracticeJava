@@ -1,7 +1,5 @@
 package ooa.designpatterns.creational;
 
-import reflection.annotation.Test;
-
 public class Singleton {
     public static void main(String[] args) {
         TestObject testObject = TestObject.testObjectAccessor();
