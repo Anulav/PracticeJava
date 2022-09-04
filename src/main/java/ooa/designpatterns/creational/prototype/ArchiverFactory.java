@@ -7,8 +7,8 @@ public class ArchiverFactory {
     private static Map<String, Archiver> prototypes = new HashMap<>();
 
     static {
-        prototypes.put("zip", new ZipArchiver());
-        prototypes.put("rar", new RarArchiver());
+        prototypes.put("zip", new ZipFArchiver());
+        prototypes.put("rar", new RarFArchiver());
     }
 
     public static Archiver getPrototypeForType(String archiverType){

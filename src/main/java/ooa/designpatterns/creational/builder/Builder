@@ -1,0 +1,20 @@
+****************************************************************************************************************************************************************
+
+Builder Pattern
+Usecase:  When the object has many states that needs to be set before the initialization. Therefore a lot of
+          constructors to be used.
+
+Builder has two popular variation.
+Director, Chain Builder(more popular uses inner class)
+
+****************************************************************************************************************************************************************
+
+Builder with method chain checklist
+1. Create inner builder class in the Class which we want to build.
+2. Implement method in type that returns the reference of the builder object.
+3. Declare setters in the builder class which set/utilise setters of the Parent class and return
+   the reference of the builder object.
+4. Implement build() method to terminate method chain and return the target object.
+5. In client code call method to get the reference to builder and build object step by step.
+
+****************************************************************************************************************************************************************

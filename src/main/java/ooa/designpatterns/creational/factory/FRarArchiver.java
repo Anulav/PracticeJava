@@ -1,19 +1,19 @@
-package ooa.designpatterns.creational.prototype;
+package ooa.designpatterns.creational.factory;
 
 import org.apache.commons.lang3.SerializationUtils;
 
 import java.io.File;
 import java.io.Serializable;
 
-public class ZipArchiver implements Archiver, Serializable {
+public class FRarArchiver implements FArchiver, Serializable {
     @Override
     public void archive(File directory) {
-        System.out.println("Zip Archiver");
+        System.out.println("Rar FArchiver");
     }
 
     @Override
-    public Archiver clone() {
-        return (Archiver) SerializationUtils.clone(this);
+    public FArchiver clone() {
+        return SerializationUtils.clone(this);
     }
 }
 

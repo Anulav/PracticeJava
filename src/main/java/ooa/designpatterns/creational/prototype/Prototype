@@ -1,0 +1,5 @@
+Prototype checklist:
+1. Add clone() method to the hierarchy of our objects
+2. Design a registry that maintains a cache of prototypical object (We used map in the example)
+3. Design API that allows to clone objects in factory and return the results
+4. Use factory API instead of 'new' keyword to instantiate the objects.

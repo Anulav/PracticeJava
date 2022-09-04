@@ -1,0 +1,11 @@
+****************************************************************************************************************************************************************
+
+AbstractFactory vs Factory
+1. Factory method has the responsibility to create one Object whereas the AbstractFactory deals with making
+   a group of objects.
+2. Factory can be part of Abstract.
+3. Factory method is basically a method that generates a type of object.
+4. Factory method uses inheritance mechanism it allows the subclasses to decide the implementation.
+   Abstract Factory mean a type that may contain many different method to create group of objects.
+
+****************************************************************************************************************************************************************

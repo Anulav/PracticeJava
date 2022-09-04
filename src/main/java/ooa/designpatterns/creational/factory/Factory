@@ -1,0 +1,15 @@
+****************************************************************************************************************************************************************
+Factory method is used when:
+
+The initiation is never changed or when The initiation contains some step which can
+be overridden by sub classes.
+
+****************************************************************************************************************************************************************
+Factory method checklist:
+
+1. Define hierarchy of objects.
+2. Design the arguments of the factory method. Think about the qualities or characteristics
+   that are necessary and sufficient to identify the correct derived class to instantiate.
+3. Call Factory method during the runtime to instantiate the object that you need.
+
+****************************************************************************************************************************************************************
