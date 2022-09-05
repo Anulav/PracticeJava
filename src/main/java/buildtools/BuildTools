@@ -1,0 +1,167 @@
+****************************************************************************************************************************************************************
+
+Typical workflow of a Java Build:
+
+Compile Source Code -> Compile source code of tests -> Run tests
+-> Package compiled sources with sources -> Package compiled sources with resources
+
+Build tool requires -> 1. Build script
+                       2. Executable
+
+****************************************************************************************************************************************************************
+
+Goals of a Build tools:
+1. Source code compilation
+2. Handling resource management tasks
+3. Support different profiles (dev, prod, etc)
+4. Automate builds
+5. Set conditions for successful builds
+6. Define build steps
+
+****************************************************************************************************************************************************************
+
+Maven
+
+Convention over configuration (test folder, pom.xml, .class in target)
+Plugins supported
+Central repository
+Maven wrapper script
+
+****************************************************************************************************************************************************************
+
+Gradle
+DSL declarative language for build. Gradle = Maven + Ant
+Gradle can scale. Simple to Enterprise.
+Gradle wrapper script. Also have script to generate gradle.build from pom.xml
+
+****************************************************************************************************************************************************************
+
+SBT
+Color based build tool for Scala, Java and JavaScript Build tool
+
+****************************************************************************************************************************************************************
+
+Apache Maven workflow:
+1. Reads pom.xml (project object model)
+2. Downloads dependencies into local repository
+3. Executes life cycles, build phases and/or goals.
+4. Executes plugins. Plugins add extra functionality for build phases.
+
+All executed according to selected build profile.
+
+Maven built-in lifecycles:
+
+Default: handles project deployment
+Clean: handles project cleaning
+Site: handles project website
+
+Each of the these built lifecycles is defined by a list of build phases.
+e.g: test, package, generate-test-resources, install, deploy, compile
+
+mvn clean dependency:copy-dependencies package
+
+Here clean and package is a build-phase. And dependency:copy-dependencies is a goal.
+Goal can bound one or more build-phases.
+
+****************************************************************************************************************************************************************
+
+Maven Archetypes : Basically templates for maven projects.
+
+mvn -B archetype:generate -DgroupId=com.learn.project -DartifactId=maven-archetype
+-DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+
+-B -> run in non interactive mode
+archetype:generate -> generate is the goal from archetype plugin
+-D -> defined property, groupId and artifactId
+groupId -> package structure com.learn.project
+artifactId -> Name of the jar (Project Name)
+
+****************************************************************************************************************************************************************
+
+pom.xml:
+
+Pom contains all the important things about project.
+
+Superpom:
+All poms are inherited from a Superpom.
+
+<project>
+<modelVersion> model version is the model of project descriptor that maven confirms to.
+</modelVersion>
+
+<properties>
+<demo>Hi there</demo>
+Defined properties that can be used anywhere in the pom. To use property like demo we use ${demo} in the pom
+</properties>
+
+<dependencies>
+Dependencies can be of two types: direct and transitive.
+Direct are the ones that are declared directly in the dependencies.
+Transitive dependency are the ones which are not defined explicitly in the pom.xml. Transitive dependency is
+are added by maven implicitly.
+Scope in the dependency: Helps in managing the dependency in different builds.
+Six default dependency scope
+ compile: default, available in classpath in all build task
+ provided: should be provided in runtime
+ runtime: Need at the runtime but not the compile time
+ test: dependency is not required at runtime but only for test purposes.
+ system: similar to provide. Directly point to the jar. (deprecated)
+ import: Available dependency type pom. This dependency should be replaced by all the dependency in effective pom
+</dependencies>
+
+<build>
+Used to declare the project directory structure and managing plugins
+</build>
+</project>
+
+
+
+****************************************************************************************************************************************************************
+
+Working with Maven Build profiles
+
+Maven Profiles can be used to make customized build configuration. Are defined in the pom.xml in profile element
+Inside the profile element.
+Adding a profile using cli using:
+
+mvn package -P dev
+<profiles>
+    <profile>
+        <id>dev</id>
+        <activate>...
+        </activate>
+    </profile>
+</profiles>
+
+With the profile we can override:
+repositories, pluginRepositories, dependencies, plugins, properties, modules, reports
+reporting, dependencyManagement, distributionManagement, a subset of build element
+settings.xml file:
+
+
+In Maven3 profile can be placed in the following three places:
+1. Project-Specific profiles-> pom.xml
+2. User-Specific profiles-> settings.xml (in .m2 folder inside user directory)
+3. Global Profiles-> settings.xml (in .m2 folder inside user directory)
+
+Try to configure profiles in the pom.xml because we can use profile in development and deployment machine
+We can also activate profile with the help of property
+
+To check active-profiles:
+mvn help:active-profiles
+
+settings.xml
+Used to store which repository to use, which setting we don't want in our build.
+
+
+****************************************************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+

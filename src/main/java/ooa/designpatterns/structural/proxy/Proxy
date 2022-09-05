@@ -1,0 +1,22 @@
+****************************************************************************************************************************************************************
+
+Proxy
+1. We want to protect some object of direct impact
+2. We want to control the interaction with object
+3. Trigger necessary behaviour when needed
+
+Also when we want to
+1. Not create an actual object which can be big
+2. Also postpone the initiation process when the object is required.
+3. Also when we want to control the interactions with the object.
+Example, restricted access to some websites using the Proxy Server. Also in Spring Framework's AOP.
+
+****************************************************************************************************************************************************************
+
+Proxy Checklist
+1. Declare interface for wrapper and for the original type
+2. Create proxy type that implements the current interface.
+3. Aggregate object that you want to wrap in your proxy type.
+4. Implement logic of interaction with the original object.
+
+****************************************************************************************************************************************************************

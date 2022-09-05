@@ -1,0 +1,17 @@
+****************************************************************************************************************************************************************
+
+Decorator
+Decorator pattern allow us to structure the object in such a way to add additional functionalities
+to an originally created object.
+
+Example the buffer in the i/o classes of Java
+
+Decorator Checklist
+Define common context (Like BasicCar)
+Create a decorator type
+The core class and decorator implements the same common interface with common context
+Implement different features that can be added to the common context by extending or implementing
+decorator type
+Implement additional and enhanced functionality in decorator classes
+
+****************************************************************************************************************************************************************
