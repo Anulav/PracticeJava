@@ -1,5 +1,47 @@
 ****************************************************************************************************************************************************************
 
+Exception
+Technical limitation that all users should respect.
+
+Two groups of Exception
+Checked and Unchecked
+
+Checked is checked during compilation time. Used to predict user errors in program.
+Unchecked is unchecked during compilation time. Occur during runtime and can't be checked before.
+
+Errors are unchecked and a developer can't do much about it.
+RuntimeException: Unchecked exceptions.
+
+In most cases, it is better to fix your code to check the checked exceptions.
+try-catch block
+
+catch( AException | BException | CException  exception)
+
+For multiple catch blocks first specify the more specific type first.
+
+finally block - executes with and without exception. No matter what happen.
+
+throws - that method can potentially exceptions
+
+Overriding methods with throws - Specify the compatible type exception from one with original method.
+
+throw new AException("Something happened")
+
+Wrap chaining Exception
+
+throw new AException(new NullpointerException()) <- The method getCause can return the reference of the original exception
+
+****************************************************************************************************************************************************************
+
+Custom exception:
+Decide whether it should be checked or unchecked.
+If the exception is to be unchecked extend RuntimeException.
+If the exception is to be checked extend Exception.
+
+
+
+****************************************************************************************************************************************************************
+
 Typical workflow of a Java Build:
 
 Compile Source Code -> Compile source code of tests -> Run tests

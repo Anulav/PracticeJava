@@ -45,6 +45,9 @@ Synchronized block can be defined in three ways:
                                         // static synchronized methods while a thread is inside this block.
    }
 
+
+When you invoke run() as a normal method, it's called in the same thread, no new thread is started, which is the case when you call the start() method
+
 ****************************************************************************************************************************************************************
 InterThreadCommunication
 

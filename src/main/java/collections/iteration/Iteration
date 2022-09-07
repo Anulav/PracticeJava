@@ -1,0 +1,54 @@
+****************************************************************************************************************************************************************
+
+Iterable interface is super interface of Collections
+Iterable can go through all the elements of an collection.
+
+Iterator is an interface that allows access to the Collections and iteration(looping)
+
+Iterator has :
+hasNext()
+next()
+remove() //Remove the last element returned by next() method
+
+Difference between the two traversals(for and iterator)
+In for-each loop, we can’t modify collection, it will throw a ConcurrentModificationException on the other hand with iterator we can modify collection.
+
+Modifying a collection simply means removing an element or changing content of an item stored in the collection.
+This occurs because for-each loop implicitly creates an iterator but it is not exposed to the user thus we can’t modify the items in the collections.
+****************************************************************************************************************************************************************
+ListIterator
+It has set(), add(), hasPrevious() and other important methods not present in the Iterator.
+An Iterator can be used in these collection types like List, Set, and Queue whereas ListIterator can be used in List collection only.
+
+****************************************************************************************************************************************************************
+
+Fail Fast and Fail Safe Systems
+
+The Fail Fast system is a system that shuts down immediately after an error is reported.
+All the operations will be aborted instantly in it. The Fail Safe is a system that continues to operate even after an error or fail has occurred.
+These systems do not abort the operations instantly; instead, they will try to hide the errors and will try to avoid failures as much as possible.
+
+Fail Fast Iterator
+The iterator in Java is used to traverse over a collection's objects.
+The collections return two types of iterators, either it will be Fail Fast or Fail Safe.
+
+The Fail Fast iterators immediately throw ConcurrentModificationException in case of structural modification of the collection.
+Example we use remove() method on a list after the iterator is initialized and iterator methods are called.
+The Fail Fast iterators returned by ArrayList, HashMap, Vector classes.
+
+Fail Safe Iterator
+The Fail Safe iterators are just opposite to Fail Fast iterators; unlike them,
+A fail-safe iterator does not throw any exceptions unless it can handle if the collection is modified during the iteration process.
+This can be done because they operate on the copy of the collection object instead of the original object. The structural changes performed on the original collection ignored by them and affect the copied collection, not the original collection.
+So, the original collection will be kept structurally unchanged.
+Thread safe implementation of collections implements failSafe iterators.
+Example CopyOnWriteArrayList, ConcurrentHashmap
+
+Fail Safe iterator makes a snapshot of the collection the instant the iterator is created.
+
+However, it is not necessary that a collection that does not use the Fail Fast iterator create a clone or copy of it in memory to avoid the ConcurrentModificationException.
+For example, the ConcurrentHashMap does not operate on a separate copy of an object, although it does not fail fast.
+Instead, it uses semantics that is specified by the specification as non-fail fast iteration.
+****************************************************************************************************************************************************************
+Weakly consistent iterator as in ConcurrentLinkedDeque shows some update of the Collection.
+****************************************************************************************************************************************************************
