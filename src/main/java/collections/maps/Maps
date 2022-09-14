@@ -1,0 +1,6 @@
+For Maps hashcode:
+1. For multiple invocations of hashcode must consistently return the same integer.
+2. If objects are equal their hashcode must be equal.
+3. If objects are unequal their hashcode can be equal.
+
+Buckets-> Hashcode of key class % capacity -> Get the index -> If same index -> Added in the Binary tree

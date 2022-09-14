@@ -1,0 +1,29 @@
+Logs are automatic documentation, timestamped of the events that are crucial for an application run.
+
+Famous Java Logging Frameworks:
+Java Logging Framework(java.util.logging)
+Log4j
+Logback(successor of Log4j)
+SLF4j (Simple top level interface for other logging frameworks, Supports connectors like for log4j and logback)
+
+Key elements of JLF:
+Logger - The main entity on which apps makes logging calls.
+LogRecord - Use to pass logging request from logging framework and handlers.
+Handler - Exports logging object to variety of things like memory, streams, file, sockets etc.
+Level  - Defines standard logging levels.
+Filter - Provides fine-grained control on the logging.
+Formatter - Provides support for formatting logs.
+
+Logging levels:  Fatal, Error, Warn, Info, Debug, Trace
+
+You can also configure logging using config file("Logging.properties") in the conf folder of JAVA HOME FOLDER.
+Also can be done in the Application resource folder but before running application need to set the path in the
+environment.
+
+Using one Logger per class:
+private static final Logger logger = Logger.getLogger(Classname.class.getName());
+
+Advantages of using oneLogger per class:
+1. Easy to capture the source of the log.
+2. We get to know from where the particular statement is coming.
+3. We can also see at fine grained level by turing certain loggers on or off.
