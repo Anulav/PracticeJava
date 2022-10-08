@@ -1,0 +1,32 @@
+****************************************************************************************************************************************************************
+Log4j2 is good for asynchronous loggers
+Allows to have custom log levels.
+
+3 key elements:
+Loggers - Are log message destination. Independently configurable.
+Appenders - (Kind of like Handlers) Loggers sends log message to appenders. Appenders make the actual output.
+               E.g SMTP appenders, File appenders, Rolling file appenders.
+            Multiple appenders can be attached to a logger.
+Layout - Formatters to be used.
+
+****************************************************************************************************************************************************************
+
+Triggering Policies of log4j:
+Determines when the log file is rolled.
+1. Composite Triggering Policy
+2. Cron Triggering Policy - Based on cron. Asynchronous.
+3. OnStartupTriggeringPolicy - When JVM starts
+4. SizeBased - Based on Size.
+5. TimeBasedTriggeringPolicy - Like a days log.
+
+****************************************************************************************************************************************************************
+
+RollOver Strategy(For others check documentation):
+Default:  foo.log changed to foo-1.log
+DirectWire: File renames are not performed.
+
+If you want to make your Log4j 2 asynchronous you need to add LMAX disruptor library to your pom.xml.
+LMAX disruptor is a lock-free inter-thread communication library.
+****************************************************************************************************************************************************************
+
+logback is also configured the same way as log4j

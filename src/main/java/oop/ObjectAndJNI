@@ -1,0 +1,22 @@
+====================================================================================================================
+
+Java Native Interface is a foreign function interface programming framework that enables Java code running
+in Java Virtual Machine to call and be called by native applications and libraries written in other
+languages such as C or C++.
+
+To simplify this, you can see native keyword with the methods that are written on C or C++ language.
+Native keyword can be used only with methods.
+
+====================================================================================================================
+
+Shallow vs Deep cloning
+Shallow cloning means only references are cloned and not the objects behind it, it is okay for primitive types but
+not for objects.
+
+====================================================================================================================
+
+Some Methods from Object class:
+1. Clone
+2. finalize - called before the Garbage collectors takes back the memory. Not recommended to be used after JDK 9
+3. toString
+4. Hashcode

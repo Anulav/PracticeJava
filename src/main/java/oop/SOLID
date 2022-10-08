@@ -1,0 +1,67 @@
+====================================================================================================================
+
+SOLID
+
+Single Responsibility Principle
+A class should have only one reason to change.
+Each class is designed to serve the one single goal, and in case we want to adjust the way how it works
+will adjust one single class in case our class has multiple responsibilities.
+Focusing in the single concern makes class robust.
+Class should be small. Responsibility is a group of actions that serves a particular goal.
+
+====================================================================================================================
+
+Open/Closed Principle
+
+The principle states that software entities, classes, modules, functions, etc. should be open for
+extension but closed for modification versions.
+For example, you should avoid of declaring final classes, final methods, static fields and methods
+also violate this principle.
+
+Close for modification means that class is defined with enough level of abstraction to extend it
+and create new types on the basis of it.
+
+Closed for modification also means that extending the behavior of a module doesn't result in changes
+to the source code of the module. Thus it can be easily packaged as a separate library.
+
+In implementation of Open/Closed principle you might have more interfaces and classes but that is okay, Since it
+makes the code scale better.
+====================================================================================================================
+
+Liskov Substitution Principle
+
+Objects in the program should be replaceable with instances of this types without altering the correctness
+of that program.
+To make sure that we can replace one object with another, we need to check the derived classes, just extend based
+classes without replacement functionality of parent classes.
+
+If S is a subtype of T is an object of type, T may be replaced with objects of type S.
+That also means an object of type T may be substituted with any object of some type S without altering
+any of the desirable properties of key like correctness hope.
+
+====================================================================================================================
+Interface Segregation Principle
+
+No client should be dependent on the method that it does not use.
+Create slim interface and not fat interfaces.
+
+If you will force your clients to implement methods they don't need by creating further interfaces will
+
+bring complexity to our program and we can't guarantee that expected behavior will be supported in all
+
+successes.
+
+It is easier to implement multiple small interfaces rather than give implementation tools and behaviors.
+And you don't need small interfaces, easy to maintain support and scale.
+
+But in the meantime, you should avoid to create an interface for one method every time, because this
+approach will lead you to having thousands of small interfaces with one single method.
+Each interface should have clearly defined behavior.
+Perfect case interface should be cohesive. That means interface should contain group of operations that logically connected.
+
+We also need to keep our code in line with risk of substitution principle.
+
+====================================================================================================================
+Dependency Inversion Principle
+1> High level modules should not depend on low level modules. Both should be dependent on Abstractions.
+2> Abstraction should not be dependent on details. Details should depend on Abstractions.
