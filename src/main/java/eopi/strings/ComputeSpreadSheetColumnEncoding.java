@@ -1,4 +1,4 @@
-package dsa.strings;
+package eopi.strings;
 
 public class ComputeSpreadSheetColumnEncoding {
     public static void main(String[] args) {

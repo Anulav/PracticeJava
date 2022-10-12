@@ -89,3 +89,14 @@ If we want to implement the ordering later on i.e customizing ordering, for inbu
 
 Remember for natural ordering use Comparable interface and implement compareTo method for Custom ordering use Comaparator and implement
 compare method.
+
+****************************************************************************************************************************************************************
+Maps
+A Map is an object that maps keys to values. A map cannot contain duplicate keys: Each key can map to at most one value. It models the mathematical function abstraction.
+The Map interface includes methods for basic operations (such as put, get, remove, containsKey, containsValue, size, and empty), bulk operations (such as putAll and clear)
+, and collection views (such as keySet, entrySet, and values).
+
+The Collection view methods allow a Map to be viewed as a Collection in these three ways:
+keySet — the Set of keys contained in the Map.
+values — The Collection of values contained in the Map. This Collection is not a Set, because multiple keys can map to the same value.
+entrySet — the Set of key-value pairs contained in the Map. The Map interface provides a small nested interface called Map.Entry, the type of the elements in this Set.
