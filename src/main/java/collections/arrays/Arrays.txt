@@ -8,3 +8,44 @@ Access is fast however the insertion and deletion from an array is time consumin
 Arrays are immutable i.e once memory provided at runtime it will not change with time.
 
 All array elements have a property called length which tells the length of a given array.
+
+****************************************************************************************************************************************************************
+Arrays class
+This class contains various methods for manipulating arrays (such as sorting and searching). This class also contains a static factory that allows arrays to be viewed as lists.
+The methods in this class all throw a NullPointerException, if the specified array reference is null, except where noted.
+
+The documentation for the methods contained in this class includes briefs description of the implementations. Such descriptions should be regarded as implementation notes, rather than parts of the specification. Implementors should feel free to substitute other algorithms, so long as the specification itself is adhered to. (For example, the algorithm used by sort(Object[]) does not have to be a MergeSort, but it does have to be stable.
+Main methods of Arrays class:
+1. binarySearch (Array, fromIndex, toIndex, Key, Comparator) Method
+    Parameters:
+    a: The array to be searched
+    key: The value to be searched for
+    Return Value:
+    int: index of the search key, if it is contained in the array; otherwise, (-(insertion point) – 1).
+
+2. toString(Original Array) Method
+   Prototype:
+   static String toString(int[] a)
+   Parameters:
+   a: array whose string representation is required
+   Return Value:
+   string: string representation of an array
+
+3. copyOfRange (Original Array, fromIndex, endIndex) Also Copy
+   Return Value: A new array that is copied from the original and truncated with zeros depending on our specified length
+
+4. static boolean equals (int [] a, int [] a2)
+   Parameters:
+   a1: the first array that will be tested for equality
+   a2: the second array that will be tested for equality
+   Return Value:
+   Returns true only if both arrays are equal. Two arrays are considered equal if both arrays contain the same number of elements, and all corresponding pairs of elements in the two arrays are equal
+
+5. fill (Original Array, fillValue) Method
+   Prototype:
+   static void fill(int[] a, int val)
+
+6. sort (Original Array) Method
+   Prototype:
+   static void sort(int[] a)
+   Parameters: a: array that is to be sorted.
