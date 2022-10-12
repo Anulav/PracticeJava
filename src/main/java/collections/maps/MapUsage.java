@@ -43,7 +43,7 @@ public class MapUsage {
     }
 
     public static void frequencyCheck(){
-        Map<String, Integer> freqMap= new Hashtable<>();
+        Map<String, Integer> freqMap= new HashMap<>();
         List<String> strings = Arrays.asList("java", "Freq", "if","it", "is", "to", "be", "it", "is", "up", "to", "me", "to", "delegate");
 
         //Naive way
